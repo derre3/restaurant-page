@@ -1,6 +1,5 @@
 import "./style.css";
-import headerComponent from "./header.js";
-import footerComponent from "./footer";
+import Logo from "./logo.png";
 import aboutComponent from "./about";
 import menuComponent from "./menu";
 import ordersComponent from "./orders";
@@ -15,6 +14,8 @@ content.appendChild(aboutComponent());
 // append footer to content
 content.appendChild(footerComponent());
 
+changeContent();
+
 function changeContent() {
   const footer = document.querySelector("footer");
   const about = document.querySelector(".about");
@@ -25,14 +26,12 @@ function changeContent() {
     const mainContent = document.querySelector(".main-content");
     mainContent.replaceChildren(content.insertBefore(aboutComponent(), footer));
     mainContent.scrollIntoView({ behavior: "smooth" });
-    console.log(mainContent);
   });
 
   menu.addEventListener("click", () => {
     const mainContent = document.querySelector(".main-content");
     mainContent.replaceChildren(content.insertBefore(menuComponent(), footer));
     mainContent.scrollIntoView({ behavior: "smooth" });
-    console.log(mainContent);
   });
 
   orders.addEventListener("click", () => {
@@ -41,8 +40,42 @@ function changeContent() {
       content.insertBefore(ordersComponent(), footer)
     );
     mainContent.scrollIntoView({ behavior: "smooth" });
-    console.log(mainContent);
   });
 }
 
-changeContent();
+function headerComponent() {
+  const header = document.createElement("header");
+  const logoDiv = document.createElement("div");
+  const logoImage = new Image();
+  const logoText = document.createElement("p");
+  logoText.textContent = "GS Pães";
+  logoDiv.classList.add("logo");
+  logoImage.src = Logo;
+  logoDiv.appendChild(logoText);
+  logoDiv.appendChild(logoImage);
+  header.appendChild(logoDiv);
+
+  const nav = document.createElement("nav");
+  const about = document.createElement("li");
+  const menu = document.createElement("li");
+  const orders = document.createElement("li");
+  nav.appendChild(about);
+  nav.appendChild(menu);
+  nav.appendChild(orders);
+  about.classList.add("about");
+  about.textContent = "Sobre nós";
+  menu.textContent = "Cardápio";
+  menu.classList.add("menu");
+  orders.textContent = "Pedidos";
+  orders.classList.add("orders");
+  header.appendChild(nav);
+
+  return header;
+}
+
+function footerComponent() {
+  const footer = document.createElement("footer");
+  footer.textContent = "Footer";
+
+  return footer;
+}
