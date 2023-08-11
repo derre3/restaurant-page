@@ -23,22 +23,26 @@ function changeContent() {
   const orders = document.querySelector(".orders");
 
   about.addEventListener("click", () => {
-    const mainContent = document.querySelector(".main-content");
-    mainContent.replaceChildren(content.insertBefore(aboutComponent(), footer));
+    let mainContent = document.querySelector(".main-content");
+    mainContent.remove();
+    content.insertBefore(aboutComponent(), footer);
+    mainContent = document.querySelector(".main-content");
     mainContent.scrollIntoView({ behavior: "smooth" });
   });
 
   menu.addEventListener("click", () => {
-    const mainContent = document.querySelector(".main-content");
-    mainContent.replaceChildren(content.insertBefore(menuComponent(), footer));
+    let mainContent = document.querySelector(".main-content");
+    mainContent.remove();
+    content.insertBefore(menuComponent(), footer);
+    mainContent = document.querySelector(".main-content");
     mainContent.scrollIntoView({ behavior: "smooth" });
   });
 
   orders.addEventListener("click", () => {
-    const mainContent = document.querySelector(".main-content");
-    mainContent.replaceChildren(
-      content.insertBefore(ordersComponent(), footer)
-    );
+    let mainContent = document.querySelector(".main-content");
+    mainContent.remove();
+    content.insertBefore(ordersComponent(), footer);
+    mainContent = document.querySelector(".main-content");
     mainContent.scrollIntoView({ behavior: "smooth" });
   });
 }
