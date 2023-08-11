@@ -42,7 +42,7 @@ header {
   min-height: 100svh;
 }
 
-.main-content img {
+#logo-image {
   height: 500px;
   width: 500px;
   background-color: #cb9a1d;
@@ -60,12 +60,24 @@ nav {
 
 li {
   list-style-type: none;
-  border-bottom: solid black;
   width: 99px;
   height: 33px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+li:hover {
+  border-bottom: solid black;
+  transition: 100ms;
+}
+
+.list-active {
+  border-bottom: solid black;
+}
+
+li:hover {
+  cursor: pointer;
 }
 
 footer {
@@ -74,4 +86,29 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+.menu-container img {
+  border-radius: 10px;
+}
+
+.option-container {
+  position: relative;
+}
+
+.option-container img:nth-child(2) {
+  position: absolute;
+  left: 0;
+}
+
+.option-container:hover img:nth-child(2) {
+  display: none;
 }

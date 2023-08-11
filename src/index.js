@@ -1,5 +1,5 @@
 import "./style.css";
-import Logo from "./logo.png";
+import Logo from "./img/logo.png";
 import aboutComponent from "./about";
 import menuComponent from "./menu";
 import ordersComponent from "./orders";
@@ -10,7 +10,7 @@ document.body.appendChild(content);
 // append header to content
 content.appendChild(headerComponent());
 // append about to content
-content.appendChild(aboutComponent());
+content.appendChild(menuComponent());
 // append footer to content
 content.appendChild(footerComponent());
 

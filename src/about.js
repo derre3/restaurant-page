@@ -1,4 +1,4 @@
-import Logo from "./logo.png";
+import Logo from "./img/logo.png";
 
 export default function aboutComponent() {
   const mainContent = document.createElement("div");
@@ -11,6 +11,7 @@ export default function aboutComponent() {
   para2.textContent =
     "Nossos pães são artesanais, feitos sem conservantes, com produtos de qualidade prezando o sabor.";
   logoImage.src = Logo;
+  logoImage.id = "logo-image";
   mainContent.appendChild(logoImage);
   mainContent.appendChild(para1);
   mainContent.appendChild(para2);
