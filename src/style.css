@@ -9,6 +9,7 @@
   height: 100svh;
 }
 
+/* header  */
 header {
   display: flex;
   flex-direction: column;
@@ -17,7 +18,6 @@ header {
   gap: 2rem;
   padding-top: 30px;
 }
-
 .logo {
   display: flex;
   flex-direction: column;
@@ -25,12 +25,43 @@ header {
   align-items: center;
   gap: 10px;
 }
-
 .logo img {
   height: 120px;
   border-radius: 50%;
 }
+nav {
+  display: flex;
+  gap: 1rem;
+}
+li {
+  list-style-type: none;
+  width: 99px;
+  height: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li:hover {
+  border-bottom: solid black;
+  transition: 100ms;
+}
+.list-active {
+  border-bottom: solid black;
+}
+li:hover {
+  cursor: pointer;
+}
 
+/* footer */
+footer {
+  background-color: #bf911b;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* about tab */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -41,51 +72,14 @@ header {
   background-color: #cb9a1d;
   min-height: 100svh;
 }
-
 #logo-image {
   height: 500px;
   width: 500px;
   background-color: #cb9a1d;
   border-radius: 50%;
 }
-
 .main-content p {
   margin-top: 1rem;
-}
-
-nav {
-  display: flex;
-  gap: 1rem;
-}
-
-li {
-  list-style-type: none;
-  width: 99px;
-  height: 33px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-li:hover {
-  border-bottom: solid black;
-  transition: 100ms;
-}
-
-.list-active {
-  border-bottom: solid black;
-}
-
-li:hover {
-  cursor: pointer;
-}
-
-footer {
-  background-color: #bf911b;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 /* menu tab */
@@ -96,20 +90,28 @@ footer {
   flex-wrap: wrap;
   gap: 3rem;
 }
-
 .menu-container img {
   border-radius: 10px;
 }
-
 .option-container {
   position: relative;
 }
-
 .option-container img:nth-child(2) {
   position: absolute;
   left: 0;
+  transition: opacity 200ms;
+}
+.option-container img:nth-child(1) {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.option-container:hover img:nth-child(2) {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+.option-container:hover img:nth-child(1) {
+  opacity: 1;
+  transition: opacity 200ms;
 }
 
-.option-container:hover img:nth-child(2) {
-  display: none;
-}
+/* orders tab */
