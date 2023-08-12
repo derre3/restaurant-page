@@ -92,6 +92,7 @@ footer {
 }
 .menu-container img {
   border-radius: 10px;
+  width: 400px;
 }
 .option-container {
   position: relative;
