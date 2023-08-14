@@ -37,6 +37,11 @@ function populateMenu(mainContent, itemAmount) {
   menuContainer.classList.add("menu-container");
   mainContent.appendChild(menuContainer);
 
+  const tableContainer = document.createElement("div");
+  tableContainer.classList.add("table-container");
+  tableContainer.appendChild(createTable(7));
+  menuContainer.appendChild(tableContainer);
+
   for (let i = 0; i < itemAmount; i++) {
     option[i] = new Image();
     optionAlt[i] = new Image();
@@ -48,4 +53,73 @@ function populateMenu(mainContent, itemAmount) {
     optionContainer.appendChild(optionAlt[i]);
     optionContainer.classList.add("option-container");
   }
+}
+
+function createTable(rowAmount = 5) {
+  const createRow = () => {
+    const row = document.createElement("tr");
+    return row;
+  };
+
+  const createData = (amount, type = "td") => {
+    const row = createRow();
+    for (let i = 0; i < amount; i++) {
+      const data = document.createElement(type);
+      row.appendChild(data);
+    }
+    return row;
+  };
+
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const tbody = document.createElement("tbody");
+
+  const rowHeader = createData(3, "th");
+  thead.appendChild(rowHeader);
+  table.appendChild(thead);
+
+  for (let i = 0; i < rowAmount; i++) {
+    const row = createData(3);
+    tbody.appendChild(row);
+  }
+
+  table.appendChild(tbody);
+
+  // PLACEHOLDER, NEED TO MOVE THIS SOMEWHERE ELSE
+  const header = thead.children[0].children;
+  header[0].textContent = "Pão";
+  header[1].textContent = "Mini";
+  header[2].textContent = "Grande";
+
+  const data = tbody.children;
+  data[0].children[0].textContent = "Artesanal";
+  data[0].children[1].textContent = "R$ 4,00";
+  data[0].children[2].textContent = "R$ 25,00";
+
+  data[1].children[0].textContent = "Calabresa";
+  data[1].children[1].textContent = "R$ 6,00";
+  data[1].children[2].textContent = "R$ 30,00";
+
+  data[2].children[0].textContent = "Pizza";
+  data[2].children[1].textContent = "R$ 6,00";
+  data[2].children[2].textContent = "R$ 30,00";
+
+  data[3].children[0].textContent = "Queijo";
+  data[3].children[1].textContent = "R$ 6,00";
+  data[3].children[2].textContent = "R$ 30,00";
+
+  data[4].children[0].textContent = "Frango Cremoso";
+  data[4].children[1].textContent = "R$ 6,00";
+  data[4].children[2].textContent = "R$ 30,00";
+
+  data[5].children[0].textContent = "Chocolate";
+  data[5].children[1].textContent = "R$ 6,00";
+  data[5].children[2].textContent = "R$ 30,00";
+
+  data[6].children[0].textContent = "Frutas";
+  data[6].children[1].textContent = "R$ 6,00";
+  data[6].children[2].textContent = "R$ 30,00";
+  // END OF PLACEHOLDER
+
+  return table;
 }
