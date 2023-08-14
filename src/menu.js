@@ -52,6 +52,9 @@ function populateMenu(mainContent, itemAmount) {
     optionContainer.appendChild(option[i]);
     optionContainer.appendChild(optionAlt[i]);
     optionContainer.classList.add("option-container");
+    optionContainer.addEventListener("click", () => {
+      window.open("https://www.instagram.com/gspaes/", "_blank");
+    });
   }
 }
 
