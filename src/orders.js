@@ -1,14 +1,43 @@
-export default function ordersComponent() {
+import Logo from "./img/logo-info.png";
+
+export default function aboutComponent() {
+  const para = (text) => {
+    const paragraph = document.createElement("p");
+    paragraph.textContent = text;
+    return paragraph;
+  };
+
   const mainContent = document.createElement("div");
+  const logoImage = new Image();
+  const ctaHeader = document.createElement("h2");
+  const paraContainer = document.createElement("div");
+  const ordersContainer = document.createElement("div");
+  const actionButton = document.createElement("button");
+  const buttonContainer = document.createElement("div");
+
+  ordersContainer.classList.add("orders-container");
   mainContent.classList.add("main-content");
-  const para1 = document.createElement("p");
-  const instagramLink = document.createElement("a");
-  para1.textContent = "Faça seu pedido acessando o ";
-  instagramLink.textContent = "instagram GS Paẽs Artesanais";
-  instagramLink.href = "https://www.instagram.com/gspaes/";
-  instagramLink.id = "instagram-link";
-  mainContent.appendChild(para1);
-  para1.appendChild(instagramLink);
+
+  ctaHeader.textContent = "Pedidos podem ser feitos pelo nosso instagram!";
+
+  actionButton.textContent = "Faça já o seu pedido!";
+  logoImage.src = Logo;
+
+  paraContainer.appendChild(ctaHeader);
+  paraContainer.appendChild(para("📍 Santo Amaro - SP"));
+  paraContainer.appendChild(para("🍞 Pães artesanais produzidos com carinho"));
+  paraContainer.appendChild(para("📦 Pedidos sob encomenda"));
+  paraContainer.appendChild(para("🕐 Atendimento: 10h às 19h"));
+  paraContainer.appendChild(para("📞 (11) 96953-2812 / (11) 94751-7899"));
+  paraContainer.appendChild(actionButton);
+  ordersContainer.appendChild(logoImage);
+  ordersContainer.appendChild(paraContainer);
+  ordersContainer.appendChild(buttonContainer);
+  mainContent.appendChild(ordersContainer);
+
+  actionButton.addEventListener("click", () => {
+    window.open("https://www.instagram.com/gspaes/", "_blank");
+  });
 
   return mainContent;
 }
