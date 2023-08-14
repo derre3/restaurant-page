@@ -51,11 +51,9 @@ function headerComponent() {
   const header = document.createElement("header");
   const logoDiv = document.createElement("div");
   const logoImage = new Image();
-  const logoText = document.createElement("p");
-  logoText.textContent = "GS Pães";
   logoDiv.classList.add("logo");
   logoImage.src = Logo;
-  logoDiv.appendChild(logoText);
+  logoImage.alt = "GS Pães Logo";
   logoDiv.appendChild(logoImage);
   header.appendChild(logoDiv);
 

@@ -2,15 +2,30 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #4e3805;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 #content {
-  background-color: #bf911b;
-  height: 100dvh;
+  background: rgb(211, 181, 29);
+  background: radial-gradient(
+    circle,
+    rgba(211, 181, 29, 1) 0%,
+    rgba(205, 152, 29, 1) 100%
+  );
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 /* header  */
 header {
+  background-color: rgba(182, 127, 33, 0.163);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -54,7 +69,8 @@ li:hover {
 
 /* footer */
 footer {
-  background-color: #bf911b;
+  background-color: rgba(0, 0, 0, 0.111);
+  color: black;
   height: 50px;
   display: flex;
   justify-content: center;
@@ -62,24 +78,35 @@ footer {
 }
 
 /* about tab */
-.main-content {
+.about-container {
+  height: 100dvh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
-  padding: 2rem 4rem;
-  background-color: #cb9a1d;
-  min-height: 100svh;
+  gap: 4rem;
+  padding: 2rem;
+}
+.about-container p {
+  width: 100%;
+  font-size: 1.2rem;
 }
 #logo-image {
   height: 500px;
-  width: 500px;
-  background-color: #cb9a1d;
+  background-color: #cd981d;
   border-radius: 50%;
 }
 .main-content p {
   margin-top: 1rem;
+}
+@media (max-width: 850px) {
+  #logo-image {
+    height: 250px;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: justify;
+  }
 }
 
 /* menu tab */
@@ -89,10 +116,13 @@ footer {
   align-items: center;
   flex-wrap: wrap;
   gap: 3rem;
+  padding: 1rem;
 }
 .menu-container img {
-  border-radius: 10px;
-  width: 400px;
+  border-radius: 25px;
+  border: solid #6e470014;
+  /* width: 400px; */
+  width: 40dvh;
 }
 .option-container {
   position: relative;
@@ -118,33 +148,24 @@ footer {
 .table-container {
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .table-container table {
-  border: 1px solid #dededf;
+  border-bottom: 1px solid #cd981d;
   height: 100%;
-  width: 50%;
+  width: 80dvw;
   table-layout: fixed;
   border-collapse: collapse;
   border-spacing: 1px;
-  text-align: left;
-}
-.table-container caption {
-  caption-side: top;
-  text-align: left;
+  text-align: center;
 }
 .table-container th {
-  border: 1px solid #dededf;
-  background-color: #eceff1;
-  color: #000000;
+  border-bottom: 1px solid #cd981d;
   padding: 5px;
 }
 .table-container td {
-  border: 1px solid #dededf;
-  background-color: #ffffff;
-  color: #000000;
+  border-bottom: 1px solid #cd981d;
   padding: 5px;
 }
 
