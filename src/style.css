@@ -109,12 +109,12 @@ footer {
   flex-wrap: wrap;
   gap: 3rem;
   padding: 1rem;
+  max-width: 1200px;
 }
 .menu-container img {
   border-radius: 25px;
   border: solid #6e470014;
-  /* width: 400px; */
-  width: 40dvh;
+  max-width: 350px;
 }
 .option-container:hover {
   cursor: pointer;
@@ -147,7 +147,6 @@ footer {
   align-items: center;
 }
 .table-container table {
-  border-bottom: 1px solid #cd981d;
   height: 100%;
   width: 80dvw;
   table-layout: fixed;
@@ -156,11 +155,12 @@ footer {
   text-align: center;
 }
 .table-container th {
-  border-bottom: 1px solid #cd981d;
+  background-color: #cd981d;
+  border-bottom: 3px solid #cd981d;
   padding: 5px;
 }
 .table-container td {
-  border-bottom: 1px solid #cd981d;
+  border-bottom: 3px solid #cd981d;
   padding: 5px;
 }
 
@@ -204,5 +204,10 @@ footer {
   }
   .orders-container img {
     height: 250px;
+  }
+  .menu-container img {
+    border-radius: 25px;
+    border: solid #6e470014;
+    max-width: 300px;
   }
 }
