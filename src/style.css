@@ -75,6 +75,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
+}
+
+footer img {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: filter 200ms;
+}
+
+footer img:hover {
+  cursor: pointer;
+  filter: invert(33%);
+  transition: filter 200ms;
 }
 
 /* about tab */

@@ -1,5 +1,6 @@
 import "./style.css";
 import Logo from "./img/logo.png";
+import GitLogo from "./img/github-mark.svg";
 import aboutComponent from "./about";
 import menuComponent from "./menu";
 import ordersComponent from "./orders";
@@ -31,6 +32,11 @@ function changeContent() {
       } else content.insertBefore(ordersComponent(), footer);
       mainContent = document.querySelector(".main-content");
       mainContent.scrollIntoView({ behavior: "smooth" });
+
+      navList.forEach((nav) => {
+        nav.classList.remove("list-active");
+      });
+      e.target.classList = "list-active";
     });
   });
 }
@@ -65,7 +71,15 @@ function headerComponent() {
 
 function footerComponent() {
   const footer = document.createElement("footer");
-  footer.textContent = "Footer";
+  const text = document.createElement("span");
+  const gitHubLogo = new Image();
+  text.textContent = "Copyright © derre3";
+  gitHubLogo.src = GitLogo;
+  footer.appendChild(text);
+  footer.appendChild(gitHubLogo);
 
+  gitHubLogo.addEventListener("click", () => {
+    window.open("https://github.com/derre3");
+  });
   return footer;
 }
