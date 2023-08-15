@@ -18,32 +18,20 @@ changeContent();
 
 function changeContent() {
   const footer = document.querySelector("footer");
-  const about = document.querySelector(".about");
-  const menu = document.querySelector(".menu");
-  const orders = document.querySelector(".orders");
+  const navList = document.querySelectorAll("li");
 
-  about.addEventListener("click", () => {
-    let mainContent = document.querySelector(".main-content");
-    mainContent.remove();
-    content.insertBefore(aboutComponent(), footer);
-    mainContent = document.querySelector(".main-content");
-    mainContent.scrollIntoView({ behavior: "smooth" });
-  });
-
-  menu.addEventListener("click", () => {
-    let mainContent = document.querySelector(".main-content");
-    mainContent.remove();
-    content.insertBefore(menuComponent(), footer);
-    mainContent = document.querySelector(".main-content");
-    mainContent.scrollIntoView({ behavior: "smooth" });
-  });
-
-  orders.addEventListener("click", () => {
-    let mainContent = document.querySelector(".main-content");
-    mainContent.remove();
-    content.insertBefore(ordersComponent(), footer);
-    mainContent = document.querySelector(".main-content");
-    mainContent.scrollIntoView({ behavior: "smooth" });
+  navList.forEach((nav) => {
+    nav.addEventListener("click", (e) => {
+      let mainContent = document.querySelector(".main-content");
+      mainContent.remove();
+      if (e.target.id === "about") {
+        content.insertBefore(aboutComponent(), footer);
+      } else if (e.target.id === "menu") {
+        content.insertBefore(menuComponent(), footer);
+      } else content.insertBefore(ordersComponent(), footer);
+      mainContent = document.querySelector(".main-content");
+      mainContent.scrollIntoView({ behavior: "smooth" });
+    });
   });
 }
 
@@ -61,15 +49,15 @@ function headerComponent() {
   const about = document.createElement("li");
   const menu = document.createElement("li");
   const orders = document.createElement("li");
+  about.id = "about";
+  menu.id = "menu";
+  orders.id = "orders";
+  about.textContent = "Sobre nós";
+  menu.textContent = "Cardápio";
+  orders.textContent = "Pedidos";
   nav.appendChild(about);
   nav.appendChild(menu);
   nav.appendChild(orders);
-  about.classList.add("about");
-  about.textContent = "Sobre nós";
-  menu.textContent = "Cardápio";
-  menu.classList.add("menu");
-  orders.textContent = "Pedidos";
-  orders.classList.add("orders");
   header.appendChild(nav);
 
   return header;
