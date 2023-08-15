@@ -18,9 +18,9 @@ export default function aboutComponent() {
   ordersContainer.classList.add("orders-container");
   mainContent.classList.add("main-content");
 
-  ctaHeader.textContent = "Pedidos podem ser feitos pelo nosso instagram!";
+  ctaHeader.textContent = "Faça o seu pedido pelo nosso instagram!";
 
-  actionButton.textContent = "Faça já o seu pedido!";
+  actionButton.textContent = "Eu quero pãozinho!";
   logoImage.src = Logo;
 
   paraContainer.appendChild(ctaHeader);
