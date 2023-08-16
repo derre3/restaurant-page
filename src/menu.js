@@ -17,6 +17,10 @@ export default function menuComponent() {
 }
 
 function populateMenu(mainContent, itemAmount) {
+  // each menu entry has 2 pictures
+  // option and optionAlt contains the image html element
+  // optionSrc and optionSrcAlt are used to store the images from the source
+  // this is done so both the image and the source have the same array position
   const option = [];
   const optionAlt = [];
   const optionSrc = [
@@ -42,6 +46,8 @@ function populateMenu(mainContent, itemAmount) {
   tableContainer.appendChild(createTable(7));
   menuContainer.appendChild(tableContainer);
 
+  // creates a menu entry using the arrays described above
+  // the index access both arrays and sets the source to the image element
   for (let i = 0; i < itemAmount; i++) {
     option[i] = new Image();
     optionAlt[i] = new Image();
@@ -64,6 +70,7 @@ function createTable(rowAmount = 5) {
     return row;
   };
 
+  // creates td element by default if not specified
   const createData = (amount, type = "td") => {
     const row = createRow();
     for (let i = 0; i < amount; i++) {

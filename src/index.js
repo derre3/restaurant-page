@@ -26,21 +26,28 @@ function changeContent() {
   navList.forEach((nav) => {
     nav.addEventListener("click", (e) => {
       let mainContent = document.querySelector(".main-content");
+      // purge mainContent elements on click
       mainContent.remove();
+      // gets ID from clicked element and execute function based on it
       if (e.target.id === "about") {
         content.insertBefore(aboutComponent(), footer);
       } else if (e.target.id === "menu") {
         content.insertBefore(menuComponent(), footer);
       } else content.insertBefore(ordersComponent(), footer);
+      // assign the new value to mainContent so scroll function can target it
       mainContent = document.querySelector(".main-content");
       mainContent.scrollIntoView({ behavior: "smooth" });
 
+      // loops array to remove any active class
       navList.forEach((nav) => {
         nav.classList.remove("list-active");
       });
+      // then adds active class to clicked element
       e.target.classList = "list-active";
     });
   });
+  // defaults to menu component on function call
+  navList[1].click();
 }
 
 function headerComponent() {
