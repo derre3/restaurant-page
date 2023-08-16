@@ -210,7 +210,7 @@ footer img:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .orders-container button {
   cursor: pointer;
@@ -219,8 +219,15 @@ footer img:hover {
   border-radius: 10px;
   padding: 1rem;
   border: none;
-  color: #000000;
-  background-color: #ffffff;
+  color: #4e3805;
+  background-color: #f5deb3;
+  border: solid #4e38051d;
+}
+.orders-container p {
+  background: linear-gradient(90deg, #4e380520 60%, #00000000 100%);
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: 600;
 }
 
 @media (max-width: 850px) {
