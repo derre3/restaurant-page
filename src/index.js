@@ -5,21 +5,23 @@ import aboutComponent from "./about";
 import menuComponent from "./menu";
 import ordersComponent from "./orders";
 
-const content = document.createElement("div");
-content.id = "content";
-document.body.appendChild(content);
-// append header to content
-content.appendChild(headerComponent());
-// append about to content
-content.appendChild(menuComponent());
-// append footer to content
-content.appendChild(footerComponent());
-
-changeContent();
+const pageLoad = (() => {
+  const content = document.createElement("div");
+  content.id = "content";
+  document.body.appendChild(content);
+  // append header to content
+  content.appendChild(headerComponent());
+  // append about to content
+  content.appendChild(aboutComponent());
+  // append footer to content
+  content.appendChild(footerComponent());
+  changeContent();
+})();
 
 function changeContent() {
   const footer = document.querySelector("footer");
   const navList = document.querySelectorAll("li");
+  const content = document.querySelector("#content");
 
   navList.forEach((nav) => {
     nav.addEventListener("click", (e) => {
